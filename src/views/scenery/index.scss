@@ -1,0 +1,9 @@
+@mixin scenery($bg1){
+  .scenery{
+    background-color: pink;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: url(../../assets/backgrounds/#{$bg1});
+  }
+}

@@ -1,44 +1,31 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 仿mac桌面
 
-## Available Scripts
+## 为什么要仿mac
+1. 因为一直以来在数据后台相关的vue项目，拿不出一个面试时敢于说我to-C还可以的项目了。
+2. 通过揣摩苹果的交互逻辑来锻炼代码的优解能力。
+3. 练习typescript。
 
-In the project directory, you can run:
+## 开发需求
+1. 着重动画的实现，要细腻要还原
+2. 写出的代码要有章法，扩展性好。
 
-### `npm start`
+# 1期开发内容
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 开发顺序
+1. 桌面
+2. 头部
+3. 头部的交互
+4. 头部的下拉页
+5. 扩展坞
+6. 程序坞的交互
+7. 程序坞的上拉页
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## 业务分析
+* 从交互逻辑上看，底色是黑色的。
+* 在黑色的底上面有背景图，背景图上有头部，有程序坞，有文件。
+* 当我们全屏应用时，可以发现头部和背景图和文件们都会向左运动滑动，右侧漏出黑色的底面，而同时程序坞是向下滑动。退出全屏后，所有动画反向回归。
+* 每个应用都有自己的头部信息，全屏后，头部信息虽然滑向左侧，但是鼠标上移时头部信息又能从上滑动下来。
+* 当我们点击启动台时，头部和文件消失。全屏毛玻璃，全屏缩放动画展示程序，程序可翻页。但是扩展坞是保持不动的。
+>这里就理清了两个问题：底色，背景图，头部，程序坞，都没有强关联性，相互独立也有点关联。其中头部的也稍稍不同一点，每个程序都有自己的header，但是header的右侧系统信息又是固定的。header存在于屏幕上侧，也存在于全屏时的上测隐藏。
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 进度
